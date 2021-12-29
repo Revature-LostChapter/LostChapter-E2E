@@ -6,7 +6,7 @@ Given I am at the login page
 When I type in a username of <username>
 And I type in the password  <password>
 And I click the Login button
-Then I should be see username <username> and profile picture
+Then I should be taken to the main page and see username <username> and profile picture
 
 Examples:
 | username | password |
@@ -23,10 +23,10 @@ Then I should be given an error message of <error>
 
 Examples:
 | username | password | error |
-| "vhvhjkb" | "password" | "Failed to login message" | # TEST-2 #check error message
-| "JohnDoeFake" | "vhjvh" | "Failed to login message" |  # TEST-3 #check error message
-| null | "password" | "Do not leave any information blank" | # TEST-4 #check error message
-| "JohnDoeFake" | null | "Do not leave any information blank" | # TEST-5 #check error message
+| "vhvhjkb" | "password" | "Username and/or password is incorrect" | # TEST-2 #check error message
+| "JohnDoeFake" | "vhjvh" | "Username and/or password is incorrect" |  # TEST-3 #check error message
+| null | "password" | "Username and/or password is incorrect" | # TEST-4 #check error message
+| "JohnDoeFake" | null | "Username and/or password is incorrect" | # TEST-5 #check error message
 
 #TEST-6
 Scenario Outline: Login as admin with valid password, valid username (positive test) #TEST-6

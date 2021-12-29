@@ -41,10 +41,10 @@ Examples:
 | "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | null | "25" | "customer" | "Do not leave any information blank" |# TEST-13 #check role names
 | "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | null | "customer" | "Do not leave any information blank" |# TEST-14 #check role names
 | "JohnDoeFake" | "password" | "johndoe1@johndoe.com" | "John" | "Doe" | "25" | null | "Do not leave any information blank" |# TEST-15 #check role names
-| "JohnDoeFake" | "password" | "test16@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-16 #check role names
+| "JohnDoeFake" | "password" | "test16@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Username already exists" |# TEST-16 #check role names
 | "JohnDoeFake17" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-17 #check role names
-| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "-1" | "customer" | "Do not leave any information blank" |# TEST-18 #check role names
-| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "126" | "customer" | "Do not leave any information blank" |# TEST-19 #check role names
+| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "-1" | "customer" | "Age cannot be less than 5 or greater than 125" |# TEST-18 #check role names
+| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "126" | "customer" | "Age cannot be less than 5 or greater than 125" |# TEST-19 #check role names
 | "JohnDoeFake" | "password" | "InvalidEmailFormat" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-20 #check role names
 | "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "W*ELd?tz7-c-KAPP}$FGVAy$@TjxP4]zT*w?&BkR/.NJb6Nz{*+$4%M?dTaCxPtvy{j;HgG;;SWmJheH:N*Z69HMXD&}HY{tdui!pF73U:H@nU9VNpL-HWRRNe[ZKc4A4mAFNnPjEHv{:65T}{V9Xw-7gDkM=6P-?}!z@LpxAi=dp4XLrZKa=X@MCeJ*3&P)S}F+G9dBzy$+Y((n+7VyT9z{Uh[xe$uFr=4ywrUA#K}_YnCB.6:!HhVF/P+CVZ5Q" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-21 #check role names
 | "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "W*ELd?tz7-c-KAPP}$FGVAy$@TjxP4]zT*w?&BkR/.NJb6Nz{*+$4%M?dTaCxPtvy{j;HgG;;SWmJheH:N*Z69HMXD&}HY{tdui!pF73U:H@nU9VNpL-HWRRNe[ZKc4A4mAFNnPjEHv{:65T}{V9Xw-7gDkM=6P-?}!z@LpxAi=dp4XLrZKa=X@MCeJ*3&P)S}F+G9dBzy$+Y((n+7VyT9z{Uh[xe$uFr=4ywrUA#K}_YnCB.6:!HhVF/P+CVZ5Q" | "25" | "customer" | "Do not leave any information blank" |# TEST-22 #check role names
