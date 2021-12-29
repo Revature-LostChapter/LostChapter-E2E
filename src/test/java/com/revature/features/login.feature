@@ -29,7 +29,7 @@ Examples:
 | "JohnDoeFake" | null | "Username and/or password is incorrect" | # TEST-5 #check error message
 
 #TEST-6
-Scenario Outline: Login as admin with valid password, valid username (positive test) #TEST-6
+Scenario: Login as admin with valid password, valid username (positive test) #TEST-6
 Given I am at the login page
 When I type in a username of "Admin"
 And I type in the password  "AdminPassword"
@@ -37,6 +37,6 @@ And I click the Login button
 Then I should be sent to the admin page
 
 #TEST-7
-Scenario Outline: Not logged in (positive test) #TEST-7
+Scenario: Not logged in (positive test) #TEST-7
 Given I am not logged in
 Then I should not see a username and profile picture #might be guest
