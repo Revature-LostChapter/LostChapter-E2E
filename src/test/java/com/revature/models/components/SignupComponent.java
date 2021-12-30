@@ -2,6 +2,7 @@ package com.revature.models.components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,18 +31,16 @@ public class SignupComponent {
 	@FindBy(xpath = "//input[@id='password']")
 	private WebElement passwordField;
 	
-	@FindBy(xpath = "//body[1]/href=\"https:[1]/app-root[1]/app-signup[1]"
-			+ "/div[1]/mat-card[1]/form[1]/mat-card-content[1]/mat-form-field[7]"
-			+ "/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")
+	@FindBy(xpath = "//div[@id='mat-select-value-1']")
 	private WebElement roleDropdown;
 	
-	@FindBy(xpath = "//div[@id='mat-select-value-1']")
+	@FindBy(xpath = "//span[contains(text(),'Admin')]")
 	private WebElement adminRole;
 	
-	@FindBy(xpath = "//div[@id='mat-select-value-1']")
+	@FindBy(xpath = "//body/div[2]/div[2]/div[1]/div[1]/div[1]/mat-option[2]/span[1]")
 	private WebElement userRole; 
 	
-	@FindBy(xpath = "//button[contains(text(),'Sign up')]")
+	@FindBy(xpath = "//span[contains(text(),'Sign up')]")
 	private WebElement signupButton; 
 	
 	@FindBy(xpath = "//a[contains(text(),'Already have an account? Login')]")
@@ -148,31 +147,38 @@ public class SignupComponent {
 	
 	public void clickRoleSelect() {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(roleDropdown)).click();
+		Actions builder = new Actions(driver);
+		wdw.until(ExpectedConditions.visibilityOf(roleDropdown));
+		builder.moveToElement(roleDropdown).click().build().perform();
 		
 	}
 	
 	public void clickAdminRole() {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(adminRole)).click();
+		Actions builder = new Actions(driver);
+		wdw.until(ExpectedConditions.visibilityOf(adminRole));
+		builder.moveToElement(adminRole).click().build().perform();
+		
 		
 	}
 	
 	public void clickUserRole() {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(userRole)).click();
+		Actions builder = new Actions(driver);
+		wdw.until(ExpectedConditions.visibilityOf(userRole));
+		builder.moveToElement(userRole).click().build().perform();
 		
 	}
 	
 	public void clickSignupButton() {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(signupButton)).click();
+		wdw.until(ExpectedConditions.visibilityOf(signupButton)).click();
 		
 	}
 	
 	public void clickLoginLink() {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
+		wdw.until(ExpectedConditions.visibilityOf(loginLink)).click();
 		
 	}
 	
