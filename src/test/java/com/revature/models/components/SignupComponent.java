@@ -47,12 +47,30 @@ public class SignupComponent {
 	@FindBy(xpath = "//a[contains(text(),'Already have an account? Login')]")
 	private WebElement loginLink;
 	
+	@FindBy(xpath = "")
+	private WebElement successMessageElement;
+	
+	@FindBy(xpath = "")
+	private WebElement errorMessageElement;
+	
 	public SignupComponent(WebDriver driver) {
 		
 		this.driver = driver; 
 		this.wdw = new WebDriverWait(this.driver, 2);
 		
 		PageFactory.initElements(this.driver, this);
+		
+	}
+	
+	public String getErrorMessage() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(errorMessageElement)).getText();
+		
+	}
+	
+	public String getSuccessMessage() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(successMessageElement)).getText();
 		
 	}
 	

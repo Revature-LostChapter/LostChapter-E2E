@@ -8,10 +8,10 @@ And I type in the signup password  <password>
 And I type in an signup email of <email>
 And I type in a signup first name of <firstname>
 And I type in a signup last name of <lastname>
-And I type in a signupn age of <age>
+And I type in a signup age of <age>
 And I select a signup role of <role>
 And I click the signup button
-Then I should be see profile for <username>
+Then I should be see a success message saying you have successfully signed up
 
 Examples:
 | username | password | email | firstname | lastname | age | role |
@@ -34,13 +34,13 @@ Then I should see a signup error message of <error>
 
 Examples:
 | username | password | email | firstname | lastname | age | role | error |
-| null | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-9 
-| "JohnDoeFake" | null | "johndoe@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-10 
-| "JohnDoeFake" | "password" | null | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-11 
-| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | null | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-12 
-| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | null | "25" | "customer" | "Do not leave any information blank" |# TEST-13 
-| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | null | "customer" | "Do not leave any information blank" |# TEST-14 
-| "JohnDoeFake" | "password" | "johndoe1@johndoe.com" | "John" | "Doe" | "25" | null | "Do not leave any information blank" |# TEST-15 
+| "" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-9 
+| "JohnDoeFake" | "" | "johndoe@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-10 
+| "JohnDoeFake" | "password" | "" | "John" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-11 
+| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "" | "Doe" | "25" | "customer" | "Do not leave any information blank" |# TEST-12 
+| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "" | "25" | "customer" | "Do not leave any information blank" |# TEST-13 
+| "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "" | "customer" | "Do not leave any information blank" |# TEST-14 
+| "JohnDoeFake" | "password" | "johndoe1@johndoe.com" | "John" | "Doe" | "25" | "" | "Do not leave any information blank" |# TEST-15 
 | "JohnDoeFake" | "password" | "test16@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Username already exists" |# TEST-16 
 | "JohnDoeFake17" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "25" | "customer" | "Email already exists." |# TEST-17 
 | "JohnDoeFake" | "password" | "johndoe@johndoe.com" | "John" | "Doe" | "-1" | "customer" | "Age cannot be less than 5 or greater than 125" |# TEST-18 
