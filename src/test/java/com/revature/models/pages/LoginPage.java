@@ -9,6 +9,7 @@ public class LoginPage {
 	
 	public NavbarComponent navbar;
 	public LoginComponent login; 
+	public static String pageUrl = "";
 
 	
 	public LoginPage(WebDriver driver) {
