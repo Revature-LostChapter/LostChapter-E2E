@@ -14,19 +14,19 @@ public class LoginComponent {
 	private WebDriver driver;
 	private WebDriverWait wdw; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='username']")
 	private WebElement usernameField;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='password']")
 	private WebElement passwordField; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[contains(text(),'Log in')]")
 	private WebElement loginButton;
 	
 	@FindBy(xpath = "")
 	private WebElement forgotPasswordLink;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),\"Don't have an account? Create a new account\")]")
 	private WebElement createAccountButton; 
 	
 	

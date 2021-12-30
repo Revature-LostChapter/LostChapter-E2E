@@ -12,37 +12,39 @@ public class SignupComponent {
 	private WebDriver driver;
 	private WebDriverWait wdw; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='firstname']")
 	private WebElement firstnameField;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='lastname']")
 	private WebElement lastnameField;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='age']")
 	private WebElement ageField;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='username']")
 	private WebElement usernameField;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='email']")
 	private WebElement emailField; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='password']")
 	private WebElement passwordField;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//body[1]/href=\"https:[1]/app-root[1]/app-signup[1]"
+			+ "/div[1]/mat-card[1]/form[1]/mat-card-content[1]/mat-form-field[7]"
+			+ "/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")
 	private WebElement roleDropdown;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//div[@id='mat-select-value-1']")
 	private WebElement adminRole;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//div[@id='mat-select-value-1']")
 	private WebElement userRole; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[contains(text(),'Sign up')]")
 	private WebElement signupButton; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),'Already have an account? Login')]")
 	private WebElement loginLink;
 	
 	public SignupComponent(WebDriver driver) {

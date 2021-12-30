@@ -12,25 +12,25 @@ public class NavbarComponent {
 	private WebDriver driver;
 	private WebDriverWait wdw;
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//header/div[@id='nav-bar']/div[@id='nav-belt']/div[2]/div[1]/form[1]/div[1]/input[1]")
 	private WebElement searchBarField; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//button[contains(text(),'Search')]")
 	private WebElement searchButton; //actually executes the search and takes you to the search results page...or it should...
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),'Sign up')]")
 	private WebElement signupButton; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),'Log in')]")
 	private WebElement loginButton; 
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),'Cart')]")
 	private WebElement cartButton; 
 	
 	@FindBy(xpath = "")
 	private WebElement homeButton;		//clicking this takes us back to the front page
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),'The Lost Chapter')]")
 	private WebElement websiteLogo; 	//does the same thing as home button
 	
 	@FindBy(xpath = "")
