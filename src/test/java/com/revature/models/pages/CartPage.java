@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 import com.revature.models.components.LoginComponent;
 import com.revature.models.components.NavbarComponent;
 
-public class CheckoutPage {
+public class CartPage {
 	
 	public NavbarComponent navbar;
 	public LoginComponent login; 
 	
-	public CheckoutPage(WebDriver driver) {
+	public CartPage(WebDriver driver) {
 		
 		this.navbar = new NavbarComponent(driver);
 		this.login = new LoginComponent(driver);

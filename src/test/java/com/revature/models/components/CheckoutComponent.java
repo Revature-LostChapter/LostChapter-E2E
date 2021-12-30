@@ -67,12 +67,136 @@ public class CheckoutComponent {
 	}
 	
 	public String getCardNumberField() {
+		
 		return wdw.until(ExpectedConditions.visibilityOf(cardNumberField)).getText();
+		
 	}
 	
-	public void setCardNumberField(String cardNumber) {
+	public void setCardExpritionField(String cardNumber) {
+		
 		wdw.until(ExpectedConditions.visibilityOf(cardNumberField)).sendKeys(cardNumber);
+		
 	}
-
-
+	
+	public String getCardExpirationMonthField() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(cardExpirationMonthField)).getText();
+		
+	}
+	
+	public void setCardExpirationMonthField(String cardYearField) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(cardExpirationMonthField)).sendKeys(cardYearField);
+		
+	}
+	
+	public String getCardExpirationYearField() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(cardExpirationYearField)).getText();
+		
+	}
+	
+	public void setCardExpirationYearField(String cardMonthField) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(cardExpirationYearField)).sendKeys(cardMonthField);
+		
+	}
+	
+	public String getCardCvvNumber() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(cardCCV)).getText();
+		
+	}
+	
+	public void setCardCvvNumber(String cvv) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(cardCCV)).sendKeys(cvv);
+		
+	}
+	
+	public String getCardholderName() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(cardholderName)).getText();
+		
+	}
+	
+	public void setCardholderName(String nameOnCard) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(cardholderName)).sendKeys(nameOnCard);	
+		
+	}
+	
+	public String getStreetName() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(streetName)).getText();
+		
+	}
+	
+	public void setStreetName(String sName) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(streetName)).sendKeys(sName);
+		
+	}
+	
+	public String getFirstName() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(firstName)).getText();
+		
+	}
+	
+	public void setFirstName(String fName) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(firstName)).sendKeys(fName);
+		
+	}
+	
+	public String getLastName() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(lastName)).getText();
+		
+	}
+	
+	public void setLastName(String lName) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(lastName)).sendKeys(lName);
+		
+	}
+	
+	public String getDeliveryOptionOne() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(deliveryOptionOne)).getText();
+		
+	}
+	
+	public void setDeliveryOptionOne(String deliveryOne) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(deliveryOptionOne)).sendKeys(deliveryOne);
+		
+	}
+	
+	public String getDeliveryOptionTwo() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(deliveryOptionTwo)).getText();
+		
+	}
+	
+	public void setDeliveryOptionTwo(String deliveryTwo) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(deliveryOptionTwo)).sendKeys(deliveryTwo);
+		
+	}
+	
+	public void clickPurchaseButton() {
+		
+		wdw.until(ExpectedConditions.elementToBeClickable(buttonPurchase)).click();
+		
+	}
+	
+	public void clickBackToCartButton() {
+		
+		wdw.until(ExpectedConditions.elementToBeClickable(buttonBackToCart)).click();
+		
+	}
+	
+	
 }
