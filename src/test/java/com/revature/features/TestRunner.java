@@ -1,14 +1,8 @@
 package com.revature.features;
 
+import io.cucumber.junit.platform.engine.Cucumber;
 
-
-import org.junit.runner.RunWith;
-
-
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-
-@RunWith(Cucumber.class)
+@Cucumber
 public class TestRunner {
 
 }
