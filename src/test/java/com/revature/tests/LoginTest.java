@@ -1,5 +1,6 @@
 package com.revature.tests;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,8 +22,7 @@ public class LoginTest {
 	private String websiteUrl = "localhost:4200";
 
 	private LoginPage loginPage;
-	private LoginComponent loginComponent;
-	private CartComponent navbarComponent;
+
 
 	@Given("I am at the login page")
 	public void i_am_at_the_login_page() {
@@ -32,39 +32,36 @@ public class LoginTest {
 		this.driver = new ChromeDriver();
 
 		this.driver.get("http://localhost:4200");
-		this.loginComponent = new LoginComponent(driver);
-		//open login modal
-		this.navbarComponent.clickLoginButton();
+		this.loginPage = new LoginPage(driver);
+		this.loginPage.navbar.clickLoginButton();
+
 	}
 
 	@When("I type in a username of {string}")
 	public void i_type_in_a_username_of(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		this.loginPage.login.setUsernameText(string);
 	}
 
 	@When("I type in the password  {string}")
 	public void i_type_in_the_password(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		this.loginPage.login.setPasswordText(string);
 	}
 
 	@When("I click the Login button")
 	public void i_click_the_login_button() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		this.loginPage.login.clickLoginButton();
 	}
 
 	@Then("I should be taken to the main page and see username {string} and profile picture")
 	public void i_should_be_taken_to_the_main_page_and_see_username_and_profile_picture(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		Assertions.assertEquals(string, this.loginPage.navbar.getCurrentUserUsername());
 	}
 
 	@Then("I should be given an error message of {string}")
 	public void i_should_be_given_an_error_message_of(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		Assertions.assertEquals(string, this.loginPage.login.);
 	}
 
 	@When("I type in a username of null")

@@ -29,6 +29,7 @@ public class LoginComponent {
 	@FindBy(xpath = "//a[contains(text(),\"Don't have an account? Create a new account\")]")
 	private WebElement createAccountButton; 
 	
+	//Missing error message
 	
 	public LoginComponent(WebDriver driver) {
 		

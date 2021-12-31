@@ -212,7 +212,7 @@ Then I should see an update error message of "Do not leave any information blank
 
 Examples:
 | username | password | updatedFirstName |
-| "MikeDingeldein" | "wordpass" | null | # TEST-93
+| "MikeDingeldein" | "wordpass" | "" | # TEST-93
 
 # TEST-94
 Scenario Outline: User attempts to change lastname to blank  (negative test)
@@ -224,7 +224,7 @@ Then I should see an update error message of "Do not leave any information blank
 
 Examples:
 | username | password | updatedLastName |
-| "MikeDingeldein" | "wordpass" | null | # TEST-94
+| "MikeDingeldein" | "wordpass" | "" | # TEST-94
 
 # TEST-95
 Scenario Outline: User attempts to change email to blank   (negative test)
@@ -236,7 +236,7 @@ Then I should see an update error message of "Do not leave any information blank
 
 Examples:
 | username | password | updatedEmail |
-| "MikeDingeldein" | "wordpass" | null | # TEST-95
+| "MikeDingeldein" | "wordpass" | "" | # TEST-95
 
 # TEST-96
 Scenario Outline: User attempts to change username to blank  (negative test)
@@ -248,7 +248,7 @@ Then I should see an update error message of "Do not leave any information blank
 
 Examples:
 | username | password | updatedUsername |
-| "MikeDingeldein" | "wordpass" | null | # TEST-96
+| "MikeDingeldein" | "wordpass" | "" | # TEST-96
 
 # TEST-97 # this does not seem correct at all
 Scenario Outline: User attempts to change password to blank  (negative test)
@@ -260,7 +260,7 @@ Then I should see an update error message of "Do not leave any information blank
 
 Examples:
 | username | password | updatedPassword |
-| "MikeDingeldein" | "wordpass" | null | # TEST-97
+| "MikeDingeldein" | "wordpass" | "" | # TEST-97
 
 # TEST-97 
 Scenario Outline: User attempts to change age to blank  (negative test)
@@ -272,5 +272,5 @@ Then I should see an update error message of "Do not leave any information blank
 
 Examples:
 | username | password | updatedAge |
-| "MikeDingeldein" | "wordpass" | null | # TEST-97
+| "MikeDingeldein" | "wordpass" | "" | # TEST-97
 
