@@ -18,7 +18,7 @@ public class Steps {
 	
 	private WebDriver driver; 
 	private WebDriverWait wdw; 
-	private String websiteUrl = "localhost:4200";
+	private String websiteUrl = "http://localhost:4200";
 	
 	private CartPage cartPage; 
 	private LoginPage loginPage;
@@ -115,6 +115,7 @@ public class Steps {
 		String message = this.signupPage.signup.getSuccessMessage();
 		
 		Assertions.assertEquals("Successfully Signed Up", message);
+		this.driver.quit();
 		
 	}
 
@@ -128,6 +129,7 @@ public class Steps {
 		String message = this.signupPage.signup.getErrorMessage();
 		
 		Assertions.assertEquals(string, message);
+		this.driver.quit();
 		
 	}
 
