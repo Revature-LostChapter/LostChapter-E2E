@@ -61,7 +61,7 @@ public class LoginTest {
 	@Then("I should be given an error message of {string}")
 	public void i_should_be_given_an_error_message_of(String string) {
 		
-		Assertions.assertEquals(string, this.loginPage.login.);
+		Assertions.assertEquals(string, this.loginPage.login.getErrorMessage());
 	}
 
 	@When("I type in a username of null")
