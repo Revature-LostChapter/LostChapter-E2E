@@ -31,20 +31,20 @@ public class SignupComponent {
 	@FindBy(xpath = "//input[@id='password']")
 	private WebElement passwordField;
 	
-	@FindBy(xpath = "//div[@id='mat-select-value-1']")
-	private WebElement roleDropdown;
-	
-	@FindBy(xpath = "//span[contains(text(),'Admin')]")
-	private WebElement adminRole;
-	
-	@FindBy(xpath = "//body/div[2]/div[2]/div[1]/div[1]/div[1]/mat-option[2]/span[1]")
-	private WebElement userRole; 
+	@FindBy(xpath = "//input[@id='role']")
+	private WebElement roleField;
 	
 	@FindBy(xpath = "//span[contains(text(),'Sign up')]")
 	private WebElement signupButton; 
 	
 	@FindBy(xpath = "//a[contains(text(),'Already have an account? Login')]")
 	private WebElement loginLink;
+	
+	@FindBy(xpath = "")
+	private WebElement birthdateField;
+	
+	@FindBy(xpath = "")
+	private WebElement addressField; 
 	
 	@FindBy(xpath = "")
 	private WebElement successMessageElement;
@@ -145,30 +145,12 @@ public class SignupComponent {
 		
 	}
 	
-	public void clickRoleSelect() {
+	public void setRoleText(String role) {
 		
-		Actions builder = new Actions(driver);
-		wdw.until(ExpectedConditions.visibilityOf(roleDropdown));
-		builder.moveToElement(roleDropdown).click().build().perform();
+		wdw.until(ExpectedConditions.visibilityOf(roleField)).sendKeys(role);
 		
 	}
 	
-	public void clickAdminRole() {
-		
-		Actions builder = new Actions(driver);
-		wdw.until(ExpectedConditions.visibilityOf(adminRole));
-		builder.moveToElement(adminRole).click().build().perform();
-		
-		
-	}
-	
-	public void clickUserRole() {
-		
-		Actions builder = new Actions(driver);
-		wdw.until(ExpectedConditions.visibilityOf(userRole));
-		builder.moveToElement(userRole).click().build().perform();
-		
-	}
 	
 	public void clickSignupButton() {
 		
@@ -179,6 +161,18 @@ public class SignupComponent {
 	public void clickLoginLink() {
 		
 		wdw.until(ExpectedConditions.visibilityOf(loginLink)).click();
+		
+	}
+	
+	public void setBirthdateField(String birthdate) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(birthdateField)).sendKeys(birthdate);
+		
+	}
+	
+	public void setAddressField(String address) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(addressField)).sendKeys(address);
 		
 	}
 	
