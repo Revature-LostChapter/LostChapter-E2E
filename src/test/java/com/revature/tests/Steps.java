@@ -31,6 +31,7 @@ public class Steps {
 
 		System.setProperty("webdriver.chrome.driver", "C:/WebDrivers/chromedriver.exe");
 		this.driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		wdw = new WebDriverWait(this.driver, 2);
 		driver.get(SignupPage.pageUrl);
 
@@ -46,11 +47,13 @@ public class Steps {
 		if (string.equals("unique")) {
 
 			Random newRandGen = new Random();
+			int low = 65;
+			int high = 90; 
 			String newUsername = "";
 
 			for (int i = 0; i < 20; i++) {
 
-				newUsername += (char) ((newRandGen.nextInt() % 25) + 65);
+				newUsername += (char) (newRandGen.nextInt(high - low) + low);
 
 			}
 
@@ -79,18 +82,21 @@ public class Steps {
 		
 		if (string.equals("unique")) {
 
+			
 			Random newRandGen = new Random();
+			int low = 65;
+			int high = 90;
 			String newEmail = "";
 
 			for (int i = 0; i < 20; i++) {
-
-				newEmail += (char) ((newRandGen.nextInt() % 25) + 65);
+				
+				newEmail += (char) (newRandGen.nextInt(high - low) + low); 
 
 			}
 			
 			newEmail += "@gmail.com";
 
-			this.signupPage.signup.setUsernameText(newEmail);
+			this.signupPage.signup.setEmailText(newEmail);
 
 		}
 		
@@ -132,7 +138,7 @@ public class Steps {
 	}
 
 	@When("I click the signup button")
-	public void i_click_the_signup_button() {
+	public void i_click_the_signup_button() throws InterruptedException {
 
 		this.signupPage.signup.clickSignupButton();
 
