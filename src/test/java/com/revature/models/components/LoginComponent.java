@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,7 +21,7 @@ public class LoginComponent {
 	@FindBy(xpath = "//input[@id='password']")
 	private WebElement passwordField;
 
-	@FindBy(xpath = "//button[contains(text(),'Log in')]")
+	@FindBy(xpath = "//button[@id='login-button-logincomponent']")
 	private WebElement loginButton;
 
 	@FindBy(xpath = "")
@@ -30,7 +31,7 @@ public class LoginComponent {
 	private WebElement createAccountButton;
 
 	// Missing error message
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//div[@id='error-message']")
 	private WebElement errorMessage;
 
 	public LoginComponent(WebDriver driver) {
@@ -68,8 +69,10 @@ public class LoginComponent {
 
 	public void clickLoginButton() {
 
-		wdw.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
-
+		Actions action = new Actions(driver);
+		//wdw.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
+		action.moveToElement(loginButton, 25, 0).click().perform();
+		
 	}
 
 	public void clickForgotPasswordButton() {
