@@ -28,7 +28,7 @@ public class NavbarComponent {
 	@FindBy(xpath = "//a[contains(text(),'Cart')]")
 	private WebElement cartButton;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//a[contains(text(),'Lost Chapter')]")
 	private WebElement homeButton; // clicking this takes us back to the front page
 
 	@FindBy(xpath = "//a[contains(text(),'The Lost Chapter')]")
