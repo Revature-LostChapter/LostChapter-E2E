@@ -10,8 +10,8 @@ Then I should be taken to the main page and see username <username> and profile 
 
 Examples:
 | username | password |
-| "JohnDoeFake" | "password" | # TEST-1
-| "MikeDingeldein" | "wordpass" | # TEST-1
+| "username" | "password" | # TEST-1
+
 
 #TESTS 2 through 5
 Scenario Outline: Login with invalid/null password or invalid/null username (negative test)
@@ -25,8 +25,8 @@ Examples:
 | username | password | error |
 | "vhvhjkb" | "password" | "Username and/or password is incorrect" | # TEST-2 #check error message
 | "JohnDoeFake" | "vhjvh" | "Username and/or password is incorrect" |  # TEST-3 #check error message
-| null | "password" | "Username and/or password is incorrect" | # TEST-4 #check error message
-| "JohnDoeFake" | null | "Username and/or password is incorrect" | # TEST-5 #check error message
+| "" | "password" | "Username and/or password is incorrect" | # TEST-4 #check error message
+| "JohnDoeFake" | "" | "Username and/or password is incorrect" | # TEST-5 #check error message
 
 #TEST-6
 Scenario: Login as admin with valid password, valid username (positive test) #TEST-6

@@ -31,7 +31,7 @@ public class LoginTest {
 
 		this.driver = new ChromeDriver();
 
-		this.driver.get("http://localhost:4200");
+		this.driver.get("http://localhost:4200/login");
 		this.loginPage = new LoginPage(driver);
 		this.loginPage.navbar.clickLoginButton();
 
@@ -64,17 +64,6 @@ public class LoginTest {
 		Assertions.assertEquals(string, this.loginPage.login.getErrorMessage());
 	}
 
-	@When("I type in a username of null")
-	public void i_type_in_a_username_of_null() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
-	}
-
-	@When("I type in the password  null")
-	public void i_type_in_the_password_null() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
-	}
 
 	@Then("I should be sent to the admin page")
 	public void i_should_be_sent_to_the_admin_page() {

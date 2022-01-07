@@ -2,6 +2,7 @@ package com.revature.tests;
 
 import java.util.Random;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,6 +27,14 @@ public class Steps {
 	private LoginPage loginPage;
 	private SignupPage signupPage;
 
+	@AfterEach
+	public void teardown() {
+		
+		this.driver.close();
+		this.driver.quit();
+		
+	}
+	
 	@Given("I am at the signup page")
 	public void i_am_at_the_signup_page() {
 
@@ -163,7 +172,8 @@ public class Steps {
 
 		String message = this.signupPage.signup.getSuccessMessage();
 
-		Assertions.assertEquals("Successfully Signed Up", message);
+		Assertions.assertEquals("Successfully Sign up", message);
+		this.driver.close();
 		this.driver.quit();
 
 	}
@@ -174,6 +184,7 @@ public class Steps {
 		String message = this.signupPage.signup.getErrorMessage();
 
 		Assertions.assertEquals(string, message);
+		this.driver.close();
 		this.driver.quit();
 
 	}
