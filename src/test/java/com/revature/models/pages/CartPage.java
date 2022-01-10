@@ -9,6 +9,7 @@ public class CartPage {
 	
 	public NavbarComponent navbar;
 	public LoginComponent login; 
+	public static String pageUrl = "";
 	
 	public CartPage(WebDriver driver) {
 		

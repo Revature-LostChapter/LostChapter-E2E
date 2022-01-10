@@ -9,6 +9,7 @@ public class SignupPage {
 
 	public NavbarComponent navbar;
 	public SignupComponent signup;
+	public static String pageUrl = "http://localhost:4200/signup";
 	
 	public SignupPage(WebDriver driver) {
 		

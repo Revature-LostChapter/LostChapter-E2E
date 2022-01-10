@@ -9,6 +9,7 @@ public class CheckoutPage {
 	
 	public NavbarComponent navbar;
 	public LoginComponent login; 
+	public static String pageUrl = "";
 	
 	public CheckoutPage(WebDriver driver) {
 		

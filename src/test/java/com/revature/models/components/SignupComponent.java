@@ -1,7 +1,9 @@
 package com.revature.models.components;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,22 +32,26 @@ public class SignupComponent {
 	@FindBy(xpath = "//input[@id='password']")
 	private WebElement passwordField;
 	
-	@FindBy(xpath = "//body[1]/href=\"https:[1]/app-root[1]/app-signup[1]"
-			+ "/div[1]/mat-card[1]/form[1]/mat-card-content[1]/mat-form-field[7]"
-			+ "/div[1]/div[1]/div[1]/mat-select[1]/div[1]/div[1]/span[1]")
-	private WebElement roleDropdown;
+	@FindBy(xpath = "//input[@id='role']")
+	private WebElement roleField;
 	
-	@FindBy(xpath = "//div[@id='mat-select-value-1']")
-	private WebElement adminRole;
-	
-	@FindBy(xpath = "//div[@id='mat-select-value-1']")
-	private WebElement userRole; 
-	
-	@FindBy(xpath = "//button[contains(text(),'Sign up')]")
+	@FindBy(xpath = "//button[@id='singup-component-signup-button']")
 	private WebElement signupButton; 
 	
 	@FindBy(xpath = "//a[contains(text(),'Already have an account? Login')]")
 	private WebElement loginLink;
+	
+	@FindBy(xpath = "//input[@id='birthday']")
+	private WebElement birthdateField;
+	
+	@FindBy(xpath = "//input[@id='address']")
+	private WebElement addressField; 
+	
+	@FindBy(xpath = "//div[@id='success-message']")
+	private WebElement successMessageElement;
+	
+	@FindBy(xpath = "//div[@id='error-message']")
+	private WebElement errorMessageElement;
 	
 	public SignupComponent(WebDriver driver) {
 		
@@ -53,6 +59,18 @@ public class SignupComponent {
 		this.wdw = new WebDriverWait(this.driver, 2);
 		
 		PageFactory.initElements(this.driver, this);
+		
+	}
+	
+	public String getErrorMessage() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(errorMessageElement)).getText();
+		
+	}
+	
+	public String getSuccessMessage() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(successMessageElement)).getText();
 		
 	}
 	
@@ -128,33 +146,46 @@ public class SignupComponent {
 		
 	}
 	
-	public void clickRoleSelect() {
+	public void setRoleText(String role) {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(roleDropdown)).click();
-		
-	}
-	
-	public void clickAdminRole() {
-		
-		wdw.until(ExpectedConditions.elementToBeClickable(adminRole)).click();
+		wdw.until(ExpectedConditions.visibilityOf(roleField)).sendKeys(role);
 		
 	}
 	
-	public void clickUserRole() {
-		
-		wdw.until(ExpectedConditions.elementToBeClickable(userRole)).click();
-		
-	}
 	
-	public void clickSignupButton() {
+	public void clickSignupButton() throws InterruptedException {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(signupButton)).click();
+		
+		
+		Actions action = new Actions(driver);
+		
+		//wdw.until(ExpectedConditions.elementToBeClickable(signupButton)).click();
+		//action.moveToElement(signupButton).build().perform();
+		
+		//action = new Actions(driver); 
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", signupButton);
+		Thread.sleep(500);
+		action.moveToElement(signupButton, 25, 0).click().perform();
+		
+		
 		
 	}
 	
 	public void clickLoginLink() {
 		
-		wdw.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
+		wdw.until(ExpectedConditions.visibilityOf(loginLink)).click();
+		
+	}
+	
+	public void setBirthdateField(String birthdate) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(birthdateField)).sendKeys(birthdate);
+		
+	}
+	
+	public void setAddressField(String address) {
+		
+		wdw.until(ExpectedConditions.visibilityOf(addressField)).sendKeys(address);
 		
 	}
 	
