@@ -27,5 +27,14 @@ public class FooterComponent {
 		wdw.until(ExpectedConditions.elementToBeClickable(darkmodeSwitch)).click();
 
 	}
+	
+	@FindBy(xpath = "/html[1]/body[1]")
+	private WebElement body;
+	
+	public String getBodyColor() {
+
+		return wdw.until(ExpectedConditions.elementToBeClickable(body)).getCssValue("color");
+
+	}
 
 }
