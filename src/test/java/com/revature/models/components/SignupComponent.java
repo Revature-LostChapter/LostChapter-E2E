@@ -35,7 +35,7 @@ public class SignupComponent {
 	@FindBy(xpath = "//input[@id='role']")
 	private WebElement roleField;
 	
-	@FindBy(xpath = "//button[@id='signup-button']")
+	@FindBy(xpath = "//button[@id='singup-component-signup-button']")
 	private WebElement signupButton; 
 	
 	@FindBy(xpath = "//a[contains(text(),'Already have an account? Login')]")
