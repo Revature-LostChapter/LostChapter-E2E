@@ -8,7 +8,7 @@
 * Unit Tests for validate Util  (Get to at least 90% code coverage, ideally more)
 
 * Integration tests for AuthenticationController (Get to at least 90% code coverage, ideally more) Marshall
-* Integration tests for BookController (Get to at least 90% code coverage, ideally more) Marshall
+* ~~Integration tests for BookController (Get to at least 90% code coverage, ideally more)~~ (100% coverage!!!)  Marshall
 
 * Get all Feature Files written
 	- Cart
