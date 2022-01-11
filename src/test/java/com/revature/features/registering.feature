@@ -58,5 +58,5 @@ Examples:
 | "unique"   | "password" | "unique" | "John" | "Doe" | "abc" | "Customer" | "10/03/1996" |  "1095 downtown road" |"Age cannot be less than 5 or greater than 125" |# TEST-25 #not implemented 12/30 age field is filled with non numeric characters EXAMPLE 17
 | "unique" | "password" | "unique" | "John" | "Doe" | "25" | "Customer" | "" | "1095 downtown Road" | "birthday cannot be blank." | #TEST-99 birthday is left blank EXAMPLE 18
 | "unique" | "password" | "unique" | "John" | "Doe" | "25" | "Customer" | "10/03/1996" | "" | "address cannot be blank." | #TEST-101 Address is left empty EXAMPLE 19
-| "unique" | "password" | "unique" | "John" | "Doe" | "25" | "Customer" | "101231/51245/126932123" | "1095 downtown road" | "birthdate is invalid format" | #TEST-100 birthdate format is invalid EXAMPLE 20
+| "unique" | "password" | "unique" | "John" | "Doe" | "25" | "Customer" | "101231/51245/126932123" | "1095 downtown road" | "Invalid birthday has been entered in. Should be MM/DD/YYYY" | #TEST-100 birthdate format is invalid EXAMPLE 20
 
