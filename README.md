@@ -3,11 +3,11 @@
 ## TO-DO
 
 * Unit Tests for book service (Get to at least 90% code coverage, ideally more)    Tanveer
-* Unit Tests for Security Aspect (Need to learn how to unit test aspects) (Get to at least 90% code coverage, ideally more)
+* Unit Tests for Security Aspect (Need to learn how to unit test aspects) (Get to at least 90% code coverage, ideally more) Marshall
 * Unit Tests for ValidateBookUtil (Get to at least 90% code coverage, ideally more)
 * Unit Tests for validate Util  (Get to at least 90% code coverage, ideally more)
 
-* Integration tests for AuthenticationController (Get to at least 90% code coverage, ideally more) Marshall
+* ~~Integration tests for AuthenticationController (Get to at least 90% code coverage, ideally more)~~ (100% coverage!!!) Marshall
 * ~~Integration tests for BookController (Get to at least 90% code coverage, ideally more)~~ (100% coverage!!!)  Marshall
 
 * Get all Feature Files written
