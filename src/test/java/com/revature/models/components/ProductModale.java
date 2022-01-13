@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductModale {
@@ -22,6 +23,14 @@ public class ProductModale {
 	
 	@FindBy(xpath = "//body/div[1]/div[2]/div[1]/mat-dialog-container[1]/app-display-product-modal[1]/div[1]/mat-dialog-content[2]/div[1]/button[1]")
 	private WebElement cancelButton; 
+	
+	public ProductModale(WebDriver driver) {
+		
+		this.driver = driver;
+		this.wdw = new WebDriverWait(this.driver, 2);
+		PageFactory.initElements(this.driver, this);
+		
+	}
 	
 	public void clickAddToCart() {
 		
