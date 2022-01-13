@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FrontPageComponent {
@@ -14,6 +15,15 @@ public class FrontPageComponent {
 	
 	@FindBy(xpath = "")
 	private WebElement firstProduct; 
+	
+	public FrontPageComponent(WebDriver driver) {
+		
+		this.driver = driver; 
+		
+		this.wdw = new WebDriverWait(driver, 2);
+		PageFactory.initElements(this.driver, this);
+		
+	}
 	
 	public void clickFirstProduct() throws InterruptedException {
 		
