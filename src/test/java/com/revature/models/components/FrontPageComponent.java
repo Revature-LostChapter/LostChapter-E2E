@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FrontPageComponent {
@@ -36,4 +37,13 @@ public class FrontPageComponent {
 		
 	}
 
+	@FindBy(tagName = "app-home")
+	private WebElement body;
+	
+	public String getBodyColor() {
+
+		return wdw.until(ExpectedConditions.visibilityOf(body)).getCssValue("color");
+
+	}
+	
 }

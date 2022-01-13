@@ -1,7 +1,9 @@
 package com.revature.models.components;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,13 +24,19 @@ public class FooterComponent {
 	@FindBy(xpath = "//*[@class=\"slider round\"]")
 	private WebElement darkmodeSwitch;
 	
-	public void darkmodeSwitch() {
+	public void darkmodeSwitch() throws InterruptedException {
+		
+		Actions action = new Actions(driver);
+		
+		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", darkmodeSwitch);
+	        Thread.sleep(1000);
+	        action.moveToElement(darkmodeSwitch, 25, 0).click().perform(); 
 
-		wdw.until(ExpectedConditions.elementToBeClickable(darkmodeSwitch)).click();
+//		wdw.until(ExpectedConditions.elementToBeClickable(darkmodeSwitch)).click();
 
 	}
 	
-	@FindBy(xpath = "/html[1]/body[1]")
+	@FindBy(tagName = "app-home")
 	private WebElement body;
 	
 	public String getBodyColor() {
