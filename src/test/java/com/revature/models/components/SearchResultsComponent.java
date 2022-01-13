@@ -19,7 +19,7 @@ public class SearchResultsComponent {
 		PageFactory.initElements(this.driver, this);
 	}
 	
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//span[normalize-space()='']")
 	private WebElement firstSearchResultTitle;
 	
 	public String getFirstSearchResultTitle() {

@@ -17,7 +17,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Steps {
+public class SignupTest {
 
 	private WebDriver driver;
 	private WebDriverWait wdw;
@@ -29,12 +29,12 @@ public class Steps {
 
 	@AfterEach
 	public void teardown() {
-		
+
 		this.driver.close();
 		this.driver.quit();
-		
+
 	}
-	
+
 	@Given("I am at the signup page")
 	public void i_am_at_the_signup_page() {
 
@@ -50,14 +50,15 @@ public class Steps {
 
 	}
 
-	@When("I type in a signup username of {string}") // username needs to be unique
+	@When("I type in a signup username of {string}") // username needs to be
+														// unique
 	public void i_type_in_a_signup_username_of(String string) {
 
 		if (string.equals("unique")) {
 
 			Random newRandGen = new Random();
 			int low = 65;
-			int high = 90; 
+			int high = 90;
 			String newUsername = "";
 
 			for (int i = 0; i < 20; i++) {
@@ -88,33 +89,30 @@ public class Steps {
 	@When("I type in an signup email of {string}") // email needs to be unique
 	public void i_type_in_an_signup_email_of(String string) {
 
-		
 		if (string.equals("unique")) {
 
-			
 			Random newRandGen = new Random();
 			int low = 65;
 			int high = 90;
 			String newEmail = "";
 
 			for (int i = 0; i < 20; i++) {
-				
-				newEmail += (char) (newRandGen.nextInt(high - low) + low); 
+
+				newEmail += (char) (newRandGen.nextInt(high - low) + low);
 
 			}
-			
+
 			newEmail += "@gmail.com";
 
 			this.signupPage.signup.setEmailText(newEmail);
 
 		}
-		
+
 		else {
-			
+
 			this.signupPage.signup.setEmailText(string);
-			
+
 		}
-		
 
 	}
 
