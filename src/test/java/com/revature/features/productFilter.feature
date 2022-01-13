@@ -12,7 +12,7 @@ Given: I have searched for <search> and been taken to the results
 And I click the search button
 Then I see the result
 
-Scenerio: Filtering by author but name is not an author (negative)
+Scenerio: Filtering by author but name is not an author (negative) #Should this be a test?
 Given: I have searched for <search> and been taken to the results
 And I enter <authorName> in the author field
 And I click the search button

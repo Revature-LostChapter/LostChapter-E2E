@@ -33,7 +33,7 @@ public class FooterComponent {
 	
 	public String getBodyColor() {
 
-		return wdw.until(ExpectedConditions.elementToBeClickable(body)).getCssValue("color");
+		return wdw.until(ExpectedConditions.visibilityOf(body)).getCssValue("color");
 
 	}
 
