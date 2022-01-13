@@ -9,33 +9,34 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FooterComponent {
+public class FrontPageComponent {
 	
-	private WebDriver driver;
-	private WebDriverWait wdw;
-
-	public FooterComponent(WebDriver driver) {
-		this.driver = driver;
-		wdw = new WebDriverWait(this.driver, 2);
-
+	private WebDriver driver; 
+	private WebDriverWait wdw; 
+	
+	@FindBy(xpath = "")
+	private WebElement firstProduct; 
+	
+	public FrontPageComponent(WebDriver driver) {
+		
+		this.driver = driver; 
+		
+		this.wdw = new WebDriverWait(driver, 2);
 		PageFactory.initElements(this.driver, this);
+		
 	}
-
-	@FindBy(xpath = "//*[@class=\"slider round\"]")
-	private WebElement darkmodeSwitch;
 	
-	public void darkmodeSwitch() throws InterruptedException {
+	public void clickFirstProduct() throws InterruptedException {
 		
 		Actions action = new Actions(driver);
 		
-		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", darkmodeSwitch);
-	        Thread.sleep(1000);
-	        action.moveToElement(darkmodeSwitch, 25, 0).click().perform(); 
-
-//		wdw.until(ExpectedConditions.elementToBeClickable(darkmodeSwitch)).click();
-
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstProduct);
+		
+		Thread.sleep(500);
+		action.moveToElement(firstProduct, 5, 0).click().perform();
+		
 	}
-	
+
 	@FindBy(tagName = "app-home")
 	private WebElement body;
 	
@@ -44,5 +45,5 @@ public class FooterComponent {
 		return wdw.until(ExpectedConditions.visibilityOf(body)).getCssValue("color");
 
 	}
-
+	
 }
