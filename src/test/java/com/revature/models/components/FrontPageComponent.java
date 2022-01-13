@@ -37,13 +37,15 @@ public class FrontPageComponent {
 		
 	}
 
-	@FindBy(tagName = "app-home")
+	@FindBy(tagName = "body")
 	private WebElement body;
 	
-	public String getBodyColor() {
+	public String getBodyColor() throws InterruptedException {
 
-		return wdw.until(ExpectedConditions.visibilityOf(body)).getCssValue("color");
-
+		Thread.sleep(1000);
+//		return wdw.until(ExpectedConditions.visibilityOf(body)).getCssValue("color");
+		return body.getCssValue("color");
+		
 	}
 	
 }

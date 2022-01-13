@@ -29,14 +29,15 @@ public class FooterComponent {
 		Actions action = new Actions(driver);
 		
 		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", darkmodeSwitch);
-	        Thread.sleep(1000);
-	        action.moveToElement(darkmodeSwitch, 25, 0).click().perform(); 
+	        Thread.sleep(500);
+	        action.moveToElement(darkmodeSwitch, 30, 0).click().perform(); 
 
 //		wdw.until(ExpectedConditions.elementToBeClickable(darkmodeSwitch)).click();
 
 	}
 	
-	@FindBy(tagName = "app-home")
+//	@FindBy(tagName = "app-home")
+	@FindBy(xpath = "//body")
 	private WebElement body;
 	
 	public String getBodyColor() {
