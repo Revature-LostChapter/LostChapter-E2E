@@ -9,5 +9,5 @@ Then I should be taken to the search results page and see results with <resultTi
 
 Examples:
 | searchTitle | resultTitle |
-| "catcher" | "Catcher and the Rye" | # TEST-52 # check if result are true
+| "catcher" | "catcher" | # TEST-52 # check if result are true
 | "Your Money or Your Life" | "Your Money or Your Life" | # TEST-52 # check if results are true

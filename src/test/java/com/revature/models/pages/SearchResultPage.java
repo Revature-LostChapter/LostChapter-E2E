@@ -9,7 +9,7 @@ public class SearchResultPage {
 	
 	public SearchResultsComponent searchResults;
 	public SearchFilterComponent searchFilter; 
-	public static String pageUrl = "";
+	public static String pageUrl = "http://localhost:4200/home";
 
 	
 	public SearchResultPage(WebDriver driver) {

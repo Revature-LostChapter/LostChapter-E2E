@@ -16,8 +16,9 @@ public class NavbarComponent {
 	private WebElement searchBarField;
 
 	@FindBy(xpath = "//button[contains(text(),'Search')]")
-	private WebElement searchButton; // actually executes the search and takes you to the search results page...or it
-										// should...
+	private WebElement searchButton; // actually executes the search and takes
+										// you to the search results page...or
+										// it // should...
 
 	@FindBy(xpath = "//a[contains(text(),'Sign up')]")
 	private WebElement signupButton;
@@ -29,7 +30,8 @@ public class NavbarComponent {
 	private WebElement cartButton;
 
 	@FindBy(xpath = "//a[contains(text(),'Lost Chapter')]")
-	private WebElement homeButton; // clicking this takes us back to the front page
+	private WebElement homeButton; // clicking this takes us back to the front
+									// page
 
 	@FindBy(xpath = "//a[contains(text(),'The Lost Chapter')]")
 	private WebElement websiteLogo; // does the same thing as home button

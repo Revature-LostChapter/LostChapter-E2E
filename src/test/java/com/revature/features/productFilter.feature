@@ -6,7 +6,6 @@ And I enter <authorName> in the author field
 And I click the search button
 Then I see the result
 
-
 Scenerio: Filtering by author but author is blank (negative)
 Given: I have searched for <search> and been taken to the results
 And I click the search button
