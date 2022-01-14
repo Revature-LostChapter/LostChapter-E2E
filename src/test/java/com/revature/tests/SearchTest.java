@@ -11,6 +11,7 @@ import com.revature.models.pages.SearchResultPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SearchTest {
 	
@@ -21,14 +22,17 @@ public class SearchTest {
 	private LoginPage loginPage;
 	private SearchResultPage searchResultPage;
 	
+	
 	@Given("I am at the search bar")
 	public void i_am_at_the_search_bar() {
-		System.setProperty("webdriver.chrome.driver", "C:/webdrivers/chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:/webdrivers/chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 
 		this.driver = new ChromeDriver();
 
 		this.driver.get("http://localhost:4200");
 		this.loginPage = new LoginPage(driver);
+		this.searchResultPage = new SearchResultPage(driver);
 	}
 
 	@When("Enter in a query in the search field in the navbar of {string}")
@@ -45,6 +49,8 @@ public class SearchTest {
 	public void i_should_be_taken_to_the_search_results_page_and_see_results_with(String string) {
 		
 		Assertions.assertEquals(string, this.searchResultPage.searchResults.getFirstSearchResultTitle());
+		driver.close();
+		
 	}
 	
 }

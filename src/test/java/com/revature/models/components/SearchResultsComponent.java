@@ -14,12 +14,12 @@ public class SearchResultsComponent {
 
 	public SearchResultsComponent(WebDriver driver) {
 		this.driver = driver;
-		wdw = new WebDriverWait(this.driver, 2);
+		wdw = new WebDriverWait(this.driver, 10);
 
 		PageFactory.initElements(this.driver, this);
 	}
 	
-	@FindBy(xpath = "")
+	@FindBy(css = "body.container:nth-child(2) div.header-title:nth-child(1) p:nth-child(1) > span:nth-child(2)")
 	private WebElement firstSearchResultTitle;
 	
 	public String getFirstSearchResultTitle() {

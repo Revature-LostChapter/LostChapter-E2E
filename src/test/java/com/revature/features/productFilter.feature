@@ -36,7 +36,7 @@ Examples:
 | "International" | 
 | "Education" | 
 | "Action" | 
-| "Horro" | 
+| "Horror" | 
 | "Romance" | 
 | "Comedy" | 
 
