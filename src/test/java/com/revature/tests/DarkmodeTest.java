@@ -29,6 +29,8 @@ public class DarkmodeTest {
 		this.driver = new ChromeDriver();
 
 		this.driver.get("http://localhost:4200");
+		driver.manage().window().maximize();
+
 		this.frontPage = new FrontPage(driver);
 		this.footerPage = new FooterPage(driver);
 	}
@@ -43,12 +45,12 @@ public class DarkmodeTest {
 	}
 
 	@Then("I should see a darker theme")
-	public void i_should_see_a_darker_theme() {
+	public void i_should_see_a_darker_theme() throws InterruptedException {
 
 		String s = this.frontPage.frontPageComponent.getBodyColor();
 		String c = Color.fromString(s).asHex();
 		
-		Assertions.assertEquals("#41474D", c);
+		Assertions.assertEquals("#797C80", c);
 		
 	}
 
@@ -59,6 +61,8 @@ public class DarkmodeTest {
 		this.driver = new ChromeDriver();
 
 		this.driver.get("http://localhost:4200");
+		driver.manage().window().maximize();
+
 		this.frontPage = new FrontPage(driver);
 		this.footerPage = new FooterPage(driver);
 		
@@ -74,11 +78,11 @@ public class DarkmodeTest {
 	}
 
 	@Then("I should see a lighter theme")
-	public void i_should_see_a_lighter_theme() {
+	public void i_should_see_a_lighter_theme() throws InterruptedException {
 		String s = this.frontPage.frontPageComponent.getBodyColor();
 		String c = Color.fromString(s).asHex();
 		
-		Assertions.assertEquals("#FFFFFF", c);
+		Assertions.assertEquals("#F4FAFF", c);
 	}
 
 
