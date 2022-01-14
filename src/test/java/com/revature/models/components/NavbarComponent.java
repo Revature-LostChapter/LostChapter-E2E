@@ -2,6 +2,7 @@ package com.revature.models.components;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,7 +26,7 @@ public class NavbarComponent {
 	@FindBy(xpath = "//a[contains(text(),'Log in')]")
 	private WebElement loginButton;
 
-	@FindBy(xpath = "//a[contains(text(),'Cart')]")
+	@FindBy(xpath = "//header/div[@id='nav-bar']/div[@id='nav-belt']/div[3]/div[1]/a[1]")
 	private WebElement cartButton;
 
 	@FindBy(xpath = "//a[contains(text(),'Lost Chapter')]")
@@ -80,8 +81,10 @@ public class NavbarComponent {
 	}
 
 	public void clickCartButton() {
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(cartButton, 5, 0).click().perform();
 
-		wdw.until(ExpectedConditions.elementToBeClickable(cartButton)).click();
 
 	}
 

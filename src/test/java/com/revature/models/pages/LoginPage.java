@@ -9,7 +9,7 @@ public class LoginPage {
 	
 	public NavbarComponent navbar;
 	public LoginComponent login; 
-	public static String pageUrl = "";
+	public static String pageUrl = "http://localhost:4200/login";
 
 	
 	public LoginPage(WebDriver driver) {

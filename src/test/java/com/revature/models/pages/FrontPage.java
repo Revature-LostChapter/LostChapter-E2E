@@ -12,7 +12,7 @@ public class FrontPage {
 	public NavbarComponent navbar; 
 	public ProductModale product;
 	
-	public static String pageUrl = "";
+	public static String pageUrl = "http://localhost:4200/home";
 	
 	public FrontPage(WebDriver driver) {
 		

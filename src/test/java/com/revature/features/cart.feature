@@ -32,6 +32,6 @@ Scenario: Adding an item that is already in users cart
 	Given I am at the front page while logged in as a customer
 	When I click on a product on the front page
 	And I click add to cart
-	And I click add to cart
+	And I add another of the same product
 	Then I should see the product displayed in my cart with a quantity of two
 	

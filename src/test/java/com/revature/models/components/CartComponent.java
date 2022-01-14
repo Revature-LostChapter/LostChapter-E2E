@@ -27,6 +27,10 @@ public class CartComponent {
 	@FindBy(xpath = "//body[1]/href=\"https:[1]/app-root[1]/app-cart[1]/div[1]/table[1]/tfoot[1]/tr[2]/td[1]/a[1]")
 	private WebElement continueShopping;
 	
+	@FindBy(xpath = "//tbody/tr[1]/td[3]")
+	private WebElement firstProductQuantity;
+	
+	
 	public CartComponent(WebDriver driver) {
 		this.driver = driver; 
 		wdw = new WebDriverWait(this.driver, 2);
@@ -61,6 +65,18 @@ public class CartComponent {
 	
 	public void setContinueShopping(String backContinueShopping) {
 		wdw.until(ExpectedConditions.visibilityOf(continueShopping)).sendKeys(backContinueShopping);
+	}
+	
+	public void clickDeleteButton() {
+		
+		wdw.until(ExpectedConditions.elementToBeClickable(deleteButton)).click();
+		
+	}
+	
+	public String getFirstProductQuantity() {
+		
+		return wdw.until(ExpectedConditions.visibilityOf(firstProductQuantity)).getText();
+		
 	}
 	
 	

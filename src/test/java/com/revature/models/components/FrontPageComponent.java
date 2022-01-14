@@ -14,7 +14,7 @@ public class FrontPageComponent {
 	private WebDriver driver; 
 	private WebDriverWait wdw; 
 	
-	@FindBy(xpath = "")
+	@FindBy(tagName = "img")
 	private WebElement firstProduct; 
 	
 	public FrontPageComponent(WebDriver driver) {
@@ -30,9 +30,9 @@ public class FrontPageComponent {
 		
 		Actions action = new Actions(driver);
 		
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstProduct);
+		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstProduct);
 		
-		Thread.sleep(500);
+		//Thread.sleep(500);
 		action.moveToElement(firstProduct, 5, 0).click().perform();
 		
 	}

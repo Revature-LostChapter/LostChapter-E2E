@@ -11,7 +11,7 @@
 	- Checkout: 
 	- Sales/Deals: Danaya Willie Connor 
 	- Dark Mode: Mike
-	- Quantity Select: 
+	- Quantity Select: Tanveer
 	- Notifications: Connor
 	
 * DevOps/EC2 Deployment

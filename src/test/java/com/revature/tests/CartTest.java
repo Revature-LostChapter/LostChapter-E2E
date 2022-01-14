@@ -1,8 +1,11 @@
 package com.revature.tests;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.revature.models.pages.CartPage;
@@ -33,19 +36,24 @@ public class CartTest {
 	}
 	
 	@Given("I am at the front page while logged in as a customer")
-	public void i_am_at_the_front_page_while_logged_in_as_a_customer() {
+	public void i_am_at_the_front_page_while_logged_in_as_a_customer() throws InterruptedException {
 		
 		System.setProperty("webdriver.chrome.driver", "C:/WebDrivers/chromedriver.exe");
 		this.driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		wdw = new WebDriverWait(this.driver, 2);
-		driver.get(loginPage.pageUrl);
+		driver.get(LoginPage.pageUrl);
+		
+		this.loginPage = new LoginPage(driver);
 		
 		this.loginPage.login.setUsernameText("username");
 		this.loginPage.login.setPasswordText("password");
 		this.loginPage.login.clickLoginButton();
 		
-		driver.get(frontPage.pageUrl);
+		driver.get(FrontPage.pageUrl);
+		
+		this.frontPage = new FrontPage(driver);
+		Thread.sleep(500);
 		
 		
 	}
@@ -54,13 +62,18 @@ public class CartTest {
 	public void i_click_on_a_product_on_the_front_page() throws InterruptedException {
 		
 		this.frontPage.frontPageComponent.clickFirstProduct();
+		Thread.sleep(500);
 		
 	}
 
 	@When("I click add to cart")
-	public void i_click_add_to_cart() {
+	public void i_click_add_to_cart() throws InterruptedException {
 		
 		this.frontPage.product.clickAddToCart();
+		Thread.sleep(500);
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ESCAPE).build().perform();
+		Thread.sleep(500);
 		
 	}
 
@@ -73,32 +86,59 @@ public class CartTest {
 
 	@Then("I should see the product displayed in my cart")
 	public void i_should_see_the_product_displayed_in_my_cart() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		this.cartPage = new CartPage(driver);
+		this.cartPage.cart.clickRefreshButton();
+		
 	}
 
 	@When("I click remove item from cart")
 	public void i_click_remove_item_from_cart() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		this.cartPage = new CartPage(driver);
+		this.cartPage.cart.clickDeleteButton();
+		
 	}
 
 	@Then("I should see my cart is empty")
 	public void i_should_see_my_cart_is_empty() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		//How to check that cart is empty 
+		
 	}
 
 	@Given("I am at the front page while not logged in")
-	public void i_am_at_the_front_page_while_not_logged_in() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+	public void i_am_at_the_front_page_while_not_logged_in() throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "C:/WebDrivers/chromedriver.exe");
+		this.driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		wdw = new WebDriverWait(this.driver, 2);
+		driver.get(websiteUrl);
+		
+		this.frontPage = new FrontPage(driver);
+		Thread.sleep(500);
+		
+		
+		
 	}
 
 	@Then("I should be prompted to login")
 	public void i_should_be_prompted_to_login() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		Assertions.assertEquals(LoginPage.pageUrl, this.driver.getCurrentUrl());
+		
+	}
+	
+	@When("I add another of the same product")
+	public void i_add_another_of_the_same_product() throws InterruptedException {
+	   this.cartPage = new CartPage(driver);
+		this.cartPage.navbar.clickHomeButton();
+		this.frontPage.frontPageComponent.clickFirstProduct();
+		this.frontPage.product.clickAddToCart();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ESCAPE).build().perform();
+		
 	}
 
 	@When("I select a product that is out of stock")
@@ -115,8 +155,10 @@ public class CartTest {
 
 	@Then("I should see the product displayed in my cart with a quantity of two")
 	public void i_should_see_the_product_displayed_in_my_cart_with_a_quantity_of_two() {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		
+		Assertions.assertEquals("2", this.cartPage.cart.getFirstProductQuantity());
+		
+		
 	}
 
 }
